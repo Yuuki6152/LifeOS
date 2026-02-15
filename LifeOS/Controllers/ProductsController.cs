@@ -2,6 +2,7 @@
 
 namespace LifeOS.Controllers
 {
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         private static List<Product> _products = new List<Product>
@@ -11,7 +12,7 @@ namespace LifeOS.Controllers
         };
 
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetProduct()
+        public IActionResult GetProducts()
         {
             return Ok(_products);
         }
