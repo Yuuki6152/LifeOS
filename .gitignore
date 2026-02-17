@@ -7,8 +7,10 @@
 **/bin/
 **/obj/
 
-## Node (React)
+# my-react-app
 my-react-app/node_modules/
+my-react-app/.env
+my-react-app/build/
 
 ## Logs
 *.log
