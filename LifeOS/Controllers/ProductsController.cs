@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 
 namespace LifeOS.Controllers
 {
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : Controller
     {
         private static List<Product> _products = new List<Product>
         {
@@ -27,6 +28,7 @@ namespace LifeOS.Controllers
             }
             return Ok(product);
         }
+
 
     }
 

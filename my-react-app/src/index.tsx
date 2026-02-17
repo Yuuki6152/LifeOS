@@ -5,6 +5,10 @@ import App from './App';
 import ProductList from './ProductList';
 //import reportWebVitals from './reportWebVitals';
 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductModal from './ProductModal';
+
 const reactRootElement = document.getElementById('mvc-react-root');
 
 if (reactRootElement) {
@@ -33,5 +37,15 @@ if (pryvacyRootElement) {
     console.error('Reactのルート要素が見つかりませんでした。ID:mvc-react-root');
 }
 
+const btnroot = document.getElementById('react-modal-btn');
+
+if (btnroot) {
+    const root = ReactDOM.createRoot(btnroot);
+    root.render(
+        <React.StrictMode>
+            <ProductModal />
+        </React.StrictMode>
+    )
+}
 
 //reportWebVitals();
