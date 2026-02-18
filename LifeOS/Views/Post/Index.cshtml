@@ -1,0 +1,34 @@
+﻿@using LifeOS.Controllers
+@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "記事一覧";
+}
+
+<h1>記事一覧</h1>
+
+<p>
+    <a asp-action="Create">新規記事作成</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>作成日</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">詳細</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">編集</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">削除</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

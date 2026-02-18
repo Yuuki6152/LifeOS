@@ -8,6 +8,8 @@ import ProductList from './ProductList';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductModal from './ProductModal';
+import './MySimpleComponent';
+import './greeting-card';
 
 const reactRootElement = document.getElementById('mvc-react-root');
 
