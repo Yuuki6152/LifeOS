@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductModal from './ProductModal';
 import './MySimpleComponent';
 import './greeting-card';
+import './simple-counter';
+import './simple-toggle';
 
 const reactRootElement = document.getElementById('mvc-react-root');
 

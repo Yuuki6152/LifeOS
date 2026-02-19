@@ -2,10 +2,40 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>ASP.NET Core MVCのコンテンツです。</p>
-    <my-simple-component name="test"></my-simple-component>
-    <greeting-card name="test" message="よろしく"></greeting-card>
+    <h1>TypeScriptを用いたシンプルなWebコンポーネント</h1>
+    <section>
+        <h2>Greeting Card Component</h2>
+        <!-- 属性を設定してコンポーネントを初期化 -->
+        <greeting-card name="田中" message="ようこそ"></greeting-card>
+        <greeting-card name="佐藤" message="お久しぶりです"></greeting-card>
+        <greeting-card></greeting-card> <!-- 属性なしの場合はデフォルト値 -->
+    </section>
+    <section>
+        <h2>Simple Counter Component</h2>
+        <simple-counter initial-counter="5"></simple-counter>
+        <simple-counter></simple-counter>
+        <simple-counter initial-counter="-3"></simple-counter>
+    </section>
+    <section>
+        <h2>Custom Event Example</h2>
+        <simple-toggle istoggled="true"></simple-toggle>
+        <simple-toggle istoggled="false"></simple-toggle>
+    </section>
+    <script type="module">
+        // JavaScriptからコンポーネントのプロパティを操作したり、イベントを購読したりする例
+        const counter1 = document.querySelector('simple-counter[initial-count="5"]');
+        if (counter1) {
+            // プロパティ経由で値を変更
+            setTimeout(() => {
+                counter1.count = 100; // set count(value) が呼び出される
+                console.log('Counter 1 の値を100に変更しました');
+            }, 3000);
+            // カスタムイベントを購読
+            counter1.addEventListener('count-changed', (event) => {
+                console.log('Counter 1 の値が変更されました:', event.detail.count);
+            });
+        }
+    </script>
 </div>
 
 <hr />
@@ -15,4 +45,4 @@
 
 
 <link rel="stylesheet" href="/react-app/static/css/main.fb665e37.css" />
-<script src="/react-app/static/js/main.6ee86eb9.js"></script>
+<script src="/react-app/static/js/main.557de43b.js"></script>
