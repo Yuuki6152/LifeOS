@@ -12,6 +12,7 @@ import './MySimpleComponent';
 import './greeting-card';
 import './simple-counter';
 import './simple-toggle';
+import './simple-progress';
 
 const reactRootElement = document.getElementById('mvc-react-root');
 
